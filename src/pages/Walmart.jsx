@@ -1,52 +1,48 @@
-import { useConnectWallet, useWallets } from '@privy-io/react-auth';
+import { Link } from 'react-router-dom';
 
-const Menu = () => {
-  const { connectWallet } = useConnectWallet();
-  const { wallets } = useWallets();
 
-  const wallet = wallets?.[0];
-  const direccion = wallet?.address;
+import { useEffect, useState } from 'react';
 
-  // Función para recortar la dirección
-  const acortarDireccion = (addr) => {
-    if (!addr) return '';
-    return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
-  };
+const walmart = () => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/walmart.json')
+      .then(res => res.json())
+      .then(data => setProductos(data))
+      .catch(err => console.error('Error cargando JSON:', err));
+  }, []);
 
   return (
-    <header className="flex justify-between items-center bg-white px-6 py-7 shadow-sm">
-      <div className="flex items-center space-x-6">
-        <h1 className="text-blue-600 font-bold text-2xl">VALORY4</h1>
-        <div className="flex text-2xl items-center text-gray-700 hover:text-gray-900 cursor-pointer">
-          Historial
-          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
+    <section className="px-6 py-10 bg-[#f9fbfd]">
+      <h2 className="text-xl font-semibold text-gray-800 mb-6">Productos de Walmart</h2>
 
-      <div className="flex items-center space-x-3">
-        {direccion ? (
-          <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-2xl font-mono text-sm">
-            {acortarDireccion(direccion)}
-          </span>
-        ) : (
-          <button
-            onClick={async () => {
-              try {
-                await connectWallet();
-              } catch (err) {
-                console.error("Error al conectar wallet:", err);
-              }
-            }}
-            className="text-white bg-blue-600 px-4 py-2 text-sm font-bold cursor-pointer rounded-2xl"
-          >
-            Conectar Wallet
-          </button>
-        )}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {productos.map((producto, index) => (
+          <div key={index} className="bg-white rounded-xl shadow p-4 border hover:shadow-lg transition">
+            <img
+              src={producto.imagen}
+              alt={producto.nombre}
+              className="w-full h-40 object-cover rounded-md mb-4"
+            />
+            <h3 className="text-sm font-bold text-gray-800 mb-1">{producto.nombre}</h3>
+            <p className="text-sm text-gray-600 mb-3">{producto.descripcion}</p>
+            <div className="flex justify-between items-center">
+              <span className="text-blue-600 font-semibold">${producto.precio} MXN</span>
+              <a
+                href={producto.enlace}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-blue-500 hover:underline"
+              >
+                Ver más →
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
-    </header>
+    </section>
   );
 };
 
-export default Menu;
+export default walmart;
