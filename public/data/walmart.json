@@ -1,0 +1,66 @@
+[
+    {
+      "nombre": "",
+      "descripcion": "Servidor Lenovo con procesador Xeon 4514Y, 8GB de RAM, formato Rack 1U.",
+      "precio": 95119.00,
+      "categoria": "Tecnología",
+      "enlace": "https://chatgpt.com/?hints=search&q=Servidor+Lenovo+Xeon+4514Y+8GB+Rack+1U+BDL-7D73A05ELA",
+      "imagen": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/1d6e2c3a-8b9c-4b9e-8e6d-4a5e2c3a8b9c.1d6e2c3a8b9c.1d6e2c3a8b9c.jpeg"
+    },
+    {
+      "nombre": "",
+      "descripcion": "Almohadillas antivibraciones para electrodomésticos, color azul.",
+      "precio": 329.00,
+      "categoria": "Hogar",
+      "enlace": "https://chatgpt.com/?hints=search&q=Gen%C3%A9rico+-+Almohadillas+Antivibraciones+Que+Levantan+La+Base+Del+Pie+Para+El+Accesorio+De+Ba%C3%B1o+De+La+Cocina+Casera+Azul+A",
+      "imagen": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/2e3f4g5h-6i7j-8k9l-0m1n-2o3p4q5r6s7t.2e3f4g5h6i7j.2e3f4g5h6i7j.jpeg"
+    },
+    {
+      "nombre": "",
+      "descripcion": "Prensa para hamburguesas y ablandador de carne de acero inoxidable.",
+      "precio": 499.00,
+      "categoria": "Cocina",
+      "enlace": "https://chatgpt.com/?hints=search&q=BBQ+Press+Burger+Smasher+Ablandadores+De+Carne",
+      "imagen": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/3f4g5h6i-7j8k-9l0m-1n2o-3p4q5r6s7t8u.3f4g5h6i7j8k.3f4g5h6i7j8k.jpeg"
+    },
+    {
+      "nombre": "",
+      "descripcion": "Licuadora Oster con vaso de vidrio y 10 velocidades.",
+      "precio": 899.00,
+      "categoria": "Electrodomésticos",
+      "enlace": "https://www.walmart.com.mx/oster-licuadora-clasica-10-velocidades/p/007114",
+      "imagen": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/4g5h6i7j-8k9l-0m1n-2o3p-4q5r6s7t8u9v.4g5h6i7j8k9l.4g5h6i7j8k9l.jpeg"
+    },
+    {
+      "nombre": "",
+      "descripcion": "Televisor inteligente Samsung de 50 pulgadas con resolución 4K UHD.",
+      "precio": 10999.00,
+      "categoria": "Electrónica",
+      "enlace": "https://www.walmart.com.mx/samsung-smart-tv-50-4k-uhd/p/008765",
+      "imagen": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/5h6i7j8k-9l0m-1n2o-3p4q-5r6s7t8u9v0w.5h6i7j8k9l0m.5h6i7j8k9l0m.jpeg"
+    },
+    {
+      "nombre": "",
+      "descripcion": "Refrigerador LG con tecnología inverter y capacidad de 14 pies cúbicos.",
+      "precio": 13499.00,
+      "categoria": "Línea Blanca",
+      "enlace": "https://www.walmart.com.mx/lg-refrigerador-14-pies-inverter/p/009876",
+      "imagen": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/6i7j8k9l-0m1n-2o3p-4q5r-6s7t8u9v0w1x.6i7j8k9l0m1n.6i7j8k9l0m1n.jpeg"
+    },
+    {
+      "nombre": "",
+      "descripcion": "Lavadora automática Whirlpool con capacidad de 17 kg y múltiples programas.",
+      "precio": 8999.00,
+      "categoria": "Línea Blanca",
+      "enlace": "https://www.walmart.com.mx/whirlpool-lavadora-17kg-automatica/p/010987",
+      "imagen": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/7j8k9l0m-1n2o-3p4q-5r6s-7t8u9v0w1x2y.7j8k9l0m1n2o.7j8k9l0m1n2o.jpeg"
+    },
+    {
+      "nombre": "",
+      "descripcion": "Silla ergonómica para oficina con soporte lumbar y altura ajustable.",
+      "precio": 2499.00,
+      "categoria": "Muebles",
+      "enlace": "https://www.walmart.com.mx/silla-oficina-ergonomica-negra/p/011098",
+      "imagen": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/8k9l0m1n-2o3p-4q5r-6s7t-8u9v0w1x2y3z.8k9l0m1n2o3p.8k9l0m1n2o3p.jpeg"
+    }
+]
