@@ -1,12 +1,20 @@
-import { useConnectWallet } from '@privy-io/react-auth';
+import {
+  useConnectWallet,
+  useWallets,
+  useLogout
+} from '@privy-io/react-auth';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 const Menu = ({ onSelectArea }) => {
   const { connectWallet } = useConnectWallet();
+  const { wallets, ready } = useWallets();
+  const logout = useLogout();
   const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+
+  const wallet = wallets[0];
 
   const areas = [
     "Contabilidad",
@@ -17,9 +25,9 @@ const Menu = ({ onSelectArea }) => {
   ];
 
   const handleClick = (area) => {
-    onSelectArea(area);             // Guardar área seleccionada
-    navigate('/transacciones');     // Ir a la página de transacciones
-    setIsOpen(false);               // Cerrar menú
+    onSelectArea(area);
+    navigate('/transacciones');
+    setIsOpen(false);
   };
 
   const handleConnect = async () => {
@@ -30,9 +38,28 @@ const Menu = ({ onSelectArea }) => {
       console.error("Error al conectar wallet:", error);
     }
   };
-  if (location.pathname === '/') {
-    return null; // No mostrar el menú en la página de inicio
-  }
+
+  const handleLogout = async () => {
+    try {
+      if (wallet && typeof wallet.disconnect === 'function') {
+        await wallet.disconnect(); // Cierra conexión con la wallet si es posible
+        console.log("Wallet desconectada");
+      } else {
+        console.warn("La wallet no soporta desconexión programática.");
+      }
+
+      await logout();       // Cierra sesión en Privy
+      navigate('/');        // Redirige al login
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+    }
+  };
+
+  if (location.pathname === '/') return null;
+
+  const formattedAddress = wallet?.address
+    ? `${wallet.address.slice(0, 5)}...${wallet.address.slice(-4)}`
+    : null;
 
   return (
     <header className="flex justify-between items-center bg-white px-6 py-7 shadow-sm">
@@ -64,12 +91,28 @@ const Menu = ({ onSelectArea }) => {
         </div>
       </div>
 
-      <button
-        onClick={handleConnect}
-        className="text-white bg-blue-600 px-4 py-2 text-sm font-bold cursor-pointer rounded-2xl"
-      >
-        Conectar Wallet
-      </button>
+      <div className="flex items-center space-x-3">
+        {ready && wallet ? (
+          <>
+            <span className="text-sm font-mono text-gray-700 bg-gray-100 px-3 py-1 rounded-lg">
+              {formattedAddress}
+            </span>
+            <button
+              onClick={handleLogout}
+              className="bg-red-500 hover:bg-red-600 text-white text-sm px-4 py-1 rounded"
+            >
+              Cerrar Wallet
+            </button>
+          </>
+        ) : (
+          <button
+            onClick={handleConnect}
+            className="text-white bg-blue-600 px-4 py-2 text-sm font-bold cursor-pointer rounded-2xl"
+          >
+            Conectar Wallet
+          </button>
+        )}
+      </div>
     </header>
   );
 };
