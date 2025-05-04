@@ -78,6 +78,3 @@ The project uses Tailwind CSS for styling. Tailwind configuration files are loca
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
