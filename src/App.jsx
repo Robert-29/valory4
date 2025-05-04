@@ -10,13 +10,13 @@ function App() {
       <Routes>
         <Route path="/Walmart" element={<Walmart />} />
         <Route path="/" element={<Login />} />
-<<<<<<< HEAD
+
         <Route path="/" element={<Home />} />
-=======
+
         <Route path="/Home" element={<Home />} />
         <Route path="/walmart" element={<Walmart />} />
         <Route path="/costco" element={<Costco />} />
->>>>>>> c894112 (add costco)
+
       </Routes>
     </BrowserRouter>
   );

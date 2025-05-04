@@ -12,7 +12,7 @@ const Costco = () => {
             <img
               src={producto.imagen}
               alt={producto.nombre}
-              className="w-full h-40 object-cover rounded mb-3"
+              className="w-99 h-72 max rounded-md mb-4 ml-7  width-full"
             />
             <h3 className="font-semibold text-gray-800 text-sm mb-1">{producto.nombre}</h3>
             <p className="text-gray-600 text-sm mb-2">{producto.descripcion}</p>
