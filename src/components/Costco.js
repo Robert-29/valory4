@@ -1,4 +1,4 @@
-const Costco = [
+const ProductosCostco = [
     {
       nombre: "Televisor LG 65'' 4K UHD Smart TV",
       descripcion: "Pantalla con resolución Ultra HD, sistema webOS, compatible con Alexa y Google Assistant.",
@@ -49,4 +49,4 @@ const Costco = [
     }
   ];
   
-export default Costco;
+export default ProductosCostco;
