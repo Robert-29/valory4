@@ -20,10 +20,10 @@ const walmart = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {productos.map((producto, index) => (
           <div key={index} className="bg-white rounded-xl shadow p-4 border hover:shadow-lg transition">
-            <img
+            <img 
               src={producto.imagen}
               alt={producto.nombre}
-              className="w-full h-40 object-cover rounded-md mb-4"
+              className="w-full max-w-[80%] h-40 max rounded-md mb-4 ml-8  width-full"
             />
             <h3 className="text-sm font-bold text-gray-800 mb-1">{producto.nombre}</h3>
             <p className="text-sm text-gray-600 mb-3">{producto.descripcion}</p>

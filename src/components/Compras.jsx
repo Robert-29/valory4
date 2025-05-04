@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+
 const Compras = () => {
 
   const navigate = useNavigate();
