@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("/home"); 
+  }
+
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#f9fbfd]">
         <div className="bg-white rounded-xl shadow-md p-8 w-full max-w-md">
@@ -48,8 +54,8 @@ const Login = () => {
           </div>
   
           {/* Botón Iniciar Sesión */}
-          <button className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 mb-6 flex justify-center items-center gap-2">
-            <i className="fas fa-sign-in-alt" />
+          <button onClick={handleLogin} className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 mb-6 flex justify-center items-center gap-2 cursor-pointer">
+            <i className="fas fa-sign-in-alt"/>
             Iniciar Sesión
           </button>
         </div>

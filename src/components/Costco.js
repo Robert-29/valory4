@@ -20,7 +20,7 @@ const ProductosCostco = [
       descripcion: "Portátil ideal para oficina o trabajo remoto. Alto rendimiento con Ryzen 7.",
       precio: 15999.00,
       categoria: "Tecnología",
-      imagen: "https://acortar.link/5qdhHj",
+      imagen: "https://acortar.link/RPx4UN",
       enlace: "https://www.costco.com.mx/Tecnologia/Laptops/HP-Ryzen7/p/3456789"
     },
     {
